@@ -1,0 +1,395 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap);
+/************************************/
+/**************** Variable **********/
+/************************************/
+:root {
+  /******* Common Variable******/
+  --lime-green: #1db489;
+  --bright-red: #dc414c;
+  --facebook: #178ff5;
+  --twitter: #1ca0f2;
+  --instagram: linear-gradient(90deg, #fdc468 0%, #df4996 100%);
+  --youtube: #c4032a;
+
+  /********** Light Theme ********/
+
+  --light-toggle: #aeb3cb;
+  --light-theme-bg: #ffffff;
+  --light-bg-card: #f0f2fa;
+  --light-blue-text: #63687e;
+  --dark-blue-text: #1e202a;
+  --hover: #cdced5;
+}
+/************************************/
+/************* Reset style **********/
+/************************************/
+html {
+  box-sizing: border-box;
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+html[data-theme="dark"] {
+  --light-theme-b: #1e202a;
+  --light-theme-bg: #1e202a;
+  --light-bg-card: #252a41;
+  --dark-blue-text: #ffffff;
+  --hover: #40486d;
+  /* --light-blue-text: #ffffff; */
+}
+/*********** For animation *********/
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+/************************************/
+/************* Base style **********/
+/************************************/
+body {
+  font-family: "Inter", sans-serif;
+  margin: 3rem;
+  background: var(--light-theme-bg);
+}
+.card-section {
+  margin-bottom: 35px;
+}
+.card {
+  height: 22rem;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--light-bg-card);
+  border-radius: 6px;
+}
+.card-header {
+  grid-column: 2/4;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.card-header img {
+  width: 3rem;
+  margin-right: 15px;
+}
+.card-header p {
+  font-size: 1.5rem;
+  color: var(--light-blue-text);
+}
+.card-body {
+  grid-column: 2/4;
+  text-align: center;
+}
+.card-body h1 {
+  font-size: 6rem;
+  color: var(--dark-blue-text);
+  text-align: center;
+}
+.card-body p {
+  font-size: 2rem;
+  color: var(--light-blue-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.card-footer {
+  grid-column: 2/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.card-footer img {
+  width: 1.25rem;
+
+  margin-right: 5px;
+}
+.card-footer p {
+  font-size: 1.25rem;
+  color: var(--lime-green);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+/************************* Header Style ****************************/
+header {
+  margin-bottom: 25px;
+}
+header .title {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: var(--dark-blue-text);
+}
+header .text {
+  font-size: 1.5rem;
+  color: var(--light-blue-text);
+  font-weight: bold;
+}
+/************************* Main Style ***************************/
+main {
+  border-top: 1px solid #a3a1a1;
+}
+.main-title {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  margin-top: 20px;
+}
+.main-title p {
+  font-size: 1.5rem;
+  color: var(--light-blue-text);
+  align-self: center;
+  font-weight: bold;
+}
+/************************ Switch Button  ***************************/
+input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.toggle-container {
+  display: flex;
+}
+label {
+  cursor: pointer;
+  width: 5.2rem;
+  height: 2.7rem;
+  background: var(--light-toggle);
+  border-radius: 100px;
+  position: relative;
+  align-self: center;
+}
+
+label:after {
+  position: absolute;
+  content: "";
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+input:checked + label {
+  background: linear-gradient(90deg, #378fe6 0%, #3eda82 100%);
+}
+input:checked + label:after {
+  right: calc(100% - 45px);
+  transform: translateX(-100%);
+}
+/********** facebook Card Style *************************/
+
+.fb {
+  border-top: 5px solid var(--facebook);
+}
+
+/********** twitter Card Style *************************/
+.tw {
+  border-top: 5px solid var(--twitter);
+}
+
+/********** instagram Card Style *************************/
+.in {
+  border-top: 5px solid;
+  border-image-source: linear-gradient(90deg, #fdc468 0%, #df4996 100%);
+  border-image-slice: 1;
+}
+/********** youtube Card Style *************************/
+.yb {
+  border-top: 5px solid var(--youtube);
+}
+.yb .card-footer p {
+  color: var(--bright-red);
+  text-transform: capitalize;
+}
+/******************************************************/
+/******************  Overview Section  ****************/
+/******************************************************/
+.overview-section h2 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: var(--light-blue-text);
+  letter-spacing: 2px;
+  grid-column: 1/5;
+}
+
+.overview-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 20rem;
+  background: var(--light-bg-card);
+  margin-top: 25px;
+  border-radius: 6px;
+}
+.page-views {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--light-blue-text);
+  margin: auto;
+}
+.fb-icon {
+  margin: auto;
+  width: 4rem;
+}
+.overview-card h2 {
+  font-size: 6rem;
+  margin-top: 25px;
+  border-radius: 6px;
+  color: var(--dark-blue-text);
+  margin: auto;
+  grid-column: 1/2;
+}
+.up-down-icon {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin: auto;
+  width: 1.5rem;
+}
+
+.percentage {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin: auto;
+  padding-left: 45px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--lime-green);
+}
+.fb-down {
+  color: var(--bright-red);
+}
+.in-up {
+  padding-left: 80px;
+  color: var(--lime-green);
+}
+.tw-up {
+  margin-left: 55px;
+}
+.yb-down {
+  padding-left: 60px;
+  color: var(--bright-red);
+}
+/* Large tablets & laptop styles*/
+@media (min-width: 501px) and (max-width: 768px) {
+  .card {
+    margin-top: 0;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  .overview-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  .overview-section h2 {
+    grid-column: 1/3;
+  }
+  .overview-card {
+    margin-top: 0;
+  }
+  .overview-card h2 {
+    grid-column: 1/2;
+  }
+  .tw-up {
+    margin-left: 52px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  .overview-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+  }
+  .overview-card:nth-child(5) {
+    grid-column: 1/2;
+  }
+  .overview-card:nth-child(8) {
+    grid-column: 1/2;
+  }
+  .overview-card h2 {
+    grid-column: 1/2;
+    font-size: 4rem;
+  }
+}
+
+/* Desktop styles*/
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 5rem;
+  }
+  header {
+    margin-bottom: 0;
+  }
+  main {
+    border-top: none;
+  }
+  .main-title {
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+  .main-title p {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  .card:hover {
+    cursor: pointer;
+    background: var(--hover);
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+  }
+  .card-header {
+    margin-top: 20px;
+  }
+  .card-header img {
+    width: 2rem;
+  }
+  .overview-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+  .overview-card:hover {
+    cursor: pointer;
+    background: var(--hover);
+  }
+  .overview-card {
+    margin-top: 0;
+  }
+
+  .page-views {
+    font-size: 1.5rem;
+  }
+  .fb-icon {
+    width: 2.5rem;
+  }
+  .overview-card h2 {
+    font-size: 4rem;
+    grid-column: 1/2;
+  }
+  .percentage {
+    font-size: 1.5rem;
+  }
+  .tw-up {
+    margin-left: 64px;
+  }
+}
